@@ -12,7 +12,7 @@
 
 .ace_editor{
     width: 100%;
-    height: calc(100% - 7px);
+    height: 100%;
 }
 
 .ace_scrollbar {
