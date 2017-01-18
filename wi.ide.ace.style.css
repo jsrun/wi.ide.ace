@@ -23,3 +23,7 @@
 .ace_scrollbar-h {
     margin: 0 2px
 }
+
+.ace_gutter{
+    min-width: 53px;
+}
