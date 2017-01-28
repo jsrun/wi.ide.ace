@@ -53,4 +53,28 @@ module.exports = (_this) => {
     _this.settings.addSettingItem("Code Editor (Ace)", "Session Options", "ace.editor.useWorker", "Use Worker", "boolean", true, null, "webide.settings.setAceEditor");
     _this.settings.addSettingItem("Code Editor (Ace)", "Session Options", "ace.editor.useSoftTabs", "Use Soft Tabs", "boolean", true, null, "webide.settings.setAceEditor");
     _this.settings.addSettingItem("Code Editor (Ace)", "Session Options", "ace.editor.tabSize", "Tab Size", "number", 4, null, "webide.settings.setAceEditor");
+    
+    /**
+     * Default Keyboard Shortcuts
+     * @see https://github.com/ajaxorg/ace/wiki/Default-Keyboard-Shortcuts
+     */
+    
+    //Line Operations
+    _this.commands.addCommand({name: "editor:line:removeline", bind: {mac: "Command-D", win: "Ctrl-D"}, element: ".ace_editor", description: "Remove line"});
+    _this.commands.addCommand({name: "editor:line:copylinesdown", bind: {mac: "Command-Option-Down", win: "Alt-Shift-Down"}, element: ".ace_editor", description: "Copy lines down"});
+    _this.commands.addCommand({name: "editor:line:copylinesup", bind: {mac: "Command-Option-Up", win: "Alt-Shift-Up"}, element: ".ace_editor", description: "Copy lines up"});
+    _this.commands.addCommand({name: "editor:line:movelinesdown", bind: {mac: "Option-Down", win: "Alt-Down"}, element: ".ace_editor", description: "Move lines down"});
+    _this.commands.addCommand({name: "editor:line:movelinesup", bind: {mac: "Option-Up", win: "Alt-Up"}, element: ".ace_editor", description: "Move lines up"});
+    _this.commands.addCommand({name: "editor:line:removetolineend", bind: {mac: "Ctrl-K", win: "Alt-Delete"}, element: ".ace_editor", description: "Remove to line end"});
+    _this.commands.addCommand({name: "editor:line:removetolinestart", bind: {mac: "Command-Backspace", win: "Alt-Backspace"}, element: ".ace_editor", description: "Remove to linestart"});
+    _this.commands.addCommand({name: "editor:line:removewordleft", bind: {mac: "Option-Backspace", win: "Ctrl-Backspace"}, element: ".ace_editor", description: "Remove word left"});
+    _this.commands.addCommand({name: "editor:line:removewordright", bind: {mac: "Option-Delete", win: "Ctrl-Delete"}, element: ".ace_editor", description: "Remove word right"});
+    _this.commands.addCommand({name: "editor:line:splitline", bind: {mac: "Ctrl-O"}, element: ".ace_editor", description: "Split line"});
+    
+    //Selection
+    //Multicursor
+    //Go to
+    //Find/Replace
+    //Folding
+    //Other
 };

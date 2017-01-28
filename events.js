@@ -12,7 +12,7 @@
 
 "use strict";
 
-(function(){
+webide.module("ace", function(settings, tabs){
     /**
      * Function to set options to Ace Editor 
      * 
@@ -20,19 +20,19 @@
      * @param mixed value
      * @return void
      */
-    webide.settings.setAceEditor = function(key, value){
-        webide.settings.set(key, value);
-        var tabs = webide.tabs.getAll();
+    settings.setAceEditor = function(key, value){
+        settings.set(key, value);
+        var tabsList = tabs.getAll();
         
-        for(var keyTab in tabs){
-            if(typeof tabs[keyTab].editor == "object"){
+        for(var keyTab in tabsList){
+            if(typeof tabsList[keyTab].editor == "object"){
                 if(value == "true") value = true;//Bugfix
                 if(value == "false") value = false;//Bugfix
 
                 if(!isNaN(parseInt(value)))
                     value = parseInt(value);
                                 
-                tabs[keyTab].editor.setOption(key.replace("ace.editor.", ""), value);
+                tabsList[keyTab].editor.setOption(key.replace("ace.editor.", ""), value);
             }
         }
     };
@@ -43,13 +43,13 @@
      * @param string theme
      * @returns void
      */
-    webide.settings.setAceEditorTheme = function(key, theme){
-        webide.settings.set(key, theme);
-        var tabs = webide.tabs.getAll();
+    settings.setAceEditorTheme = function(key, theme){
+        settings.set(key, theme);
+        var tabsList = tabs.getAll();
         
-        for(var keyTab in tabs){
-            if(typeof tabs[keyTab].editor == "object")
-                tabs[keyTab].editor.setTheme("ace/theme/" + theme);
+        for(var keyTab in tabsList){
+            if(typeof tabsList[keyTab].editor == "object")
+                tabsList[keyTab].editor.setTheme("ace/theme/" + theme);
         }
     };
-})();
+});
