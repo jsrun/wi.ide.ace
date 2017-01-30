@@ -27,3 +27,25 @@
 .ace_gutter{
     min-width: 53px;
 }
+
+.wi-ace-statusbar{
+    position: absolute;
+    bottom: 0px;
+    width: 50%;
+    height: 20px;
+    z-index: 99999;
+    right: 0px;
+    bottom: 15px;
+}
+
+.wi-ace-statusbar-item-right{
+    float: right;
+    margin: 5px;
+    margin-right: 15px;
+    cursor: pointer;
+    color: var(--wi-default-color);
+}
+
+.wi-ace-statusbar-item-right:hover{
+    text-decoration: underline;
+}
